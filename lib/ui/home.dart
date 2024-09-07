@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lox/ui/component/myaccount.dart';
 import 'package:lox/ui/component/searchbar.dart';
 class Home extends StatelessWidget{
   @override
@@ -10,7 +11,8 @@ class Home extends StatelessWidget{
      child: SafeArea(
        child: Column(
          children: [
-           Searchbar()
+           Searchbar(),
+           Myaccount()
          ],
        ),
      ),
