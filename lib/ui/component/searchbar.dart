@@ -16,7 +16,11 @@ class Searchbar extends StatelessWidget{
             height: mdh*0.07,
             width: mdw*0.67,
             child: CupertinoTextField(
-              prefix: Icon(CupertinoIcons.search),
+              cursorColor: CupertinoColors.black,
+              prefix: Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Icon(CupertinoIcons.search,color: CupertinoColors.label,),
+              ),
               placeholder: "Search",
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -30,7 +34,7 @@ class Searchbar extends StatelessWidget{
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(child: Icon(CupertinoIcons.add,color: Color(0xFF19FF44),),decoration: BoxDecoration(color: CupertinoColors.activeGreen,borderRadius: BorderRadius.circular(20)),height: mdh*0.04,width: mdw*0.09,),
+                Container(child: Icon(CupertinoIcons.add,color: Color(0xFF86FA82),),decoration: BoxDecoration(color: CupertinoColors.activeGreen,borderRadius: BorderRadius.circular(20)),height: mdh*0.04,width: mdw*0.09,),
                 Container(child: Icon(CupertinoIcons.ellipsis,color: CupertinoColors.separator,),decoration: BoxDecoration(color: CupertinoColors.white,borderRadius: BorderRadius.circular(20),border: Border.all(width: 0.2)),height: mdh*0.04,width: mdw*0.09,),
               ],
             ),
