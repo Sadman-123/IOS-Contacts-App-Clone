@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:lox/ui/component/contact_details.dart';
 import 'package:lox/ui/home.dart';
 void main()
 {
