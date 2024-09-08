@@ -39,8 +39,13 @@ class ContactDetails extends StatelessWidget{
                  ],
                ),
              ),
-              Container(child: Contact_Mobile(num: "${arr[ind]['phone']}",)),
-              Container(child: Contact_Notes())
+              Container(
+                  child: Contact_Mobile(num: "${arr[ind]['phone']}",)
+              ),
+              Container(
+                  child: Contact_Notes()),
+              Container(
+                  child: Contact_Options())
             ],
           )
       ),
@@ -126,6 +131,42 @@ class Contact_Notes extends StatelessWidget
           Text("notes"),
           SizedBox(height: mdh*0.0067,),
           Obx(()=>Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),overflow: TextOverflow.ellipsis,maxLines: 2,))
+        ],
+      ),
+    );
+  }
+}
+class Contact_Options extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    var mdw = MediaQuery.of(context).size.width;
+    var mdh = MediaQuery.of(context).size.height;
+    return Container(
+      margin: EdgeInsets.all(mdw*0.029),
+      padding: EdgeInsets.all(4),
+      height: mdh*0.179,
+      width: double.infinity,
+      decoration: BoxDecoration(
+          color: CupertinoColors.secondarySystemBackground,
+          borderRadius: BorderRadius.circular(20)
+      ),
+      child: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Send Message",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+          ) ,
+          Divider(height: mdh*0.001,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Share Contact",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+          ),
+          Divider(height: mdh*0.001,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Add to Favourites",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+          )
         ],
       ),
     );
