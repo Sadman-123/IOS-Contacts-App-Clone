@@ -22,6 +22,7 @@ class Searchbar extends StatelessWidget{
                 child: Icon(CupertinoIcons.search,color: CupertinoColors.label,),
               ),
               placeholder: "Search",
+              placeholderStyle: TextStyle(fontFamily: "myapple",color: CupertinoColors.placeholderText),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),

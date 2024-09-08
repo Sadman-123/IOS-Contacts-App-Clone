@@ -154,7 +154,7 @@ class Contact_Options extends StatelessWidget
     return Container(
       margin: EdgeInsets.all(mdw*0.029),
       padding: EdgeInsets.all(4),
-      height: mdh*0.179,
+      height: mdh*0.19737,
       width: double.infinity,
       decoration: BoxDecoration(
           color: CupertinoColors.secondarySystemBackground,
