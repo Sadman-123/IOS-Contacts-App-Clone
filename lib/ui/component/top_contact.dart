@@ -52,7 +52,7 @@ class _TopCards extends StatelessWidget {
               ),)),
               Obx(()=>Text(
                 "${arr[num]['name']['first']}",
-                style: TextStyle(fontSize: mdw * 0.07),
+                style: TextStyle(fontSize: mdw * 0.07,fontFamily: "myapple",color: CupertinoColors.black),
               ),),
               Container(
                 height: mdh*0.06,

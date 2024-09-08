@@ -20,6 +20,13 @@ class Main extends StatelessWidget
       // useInheritedMediaQuery: true,
       // locale: DevicePreview.locale(context),
       debugShowCheckedModeBanner: false,
+      theme: CupertinoThemeData(
+        textTheme:CupertinoTextThemeData(
+          textStyle: TextStyle(
+            fontFamily: "myapple",
+          )
+        )
+      ),
       home: Home(),
     );
   }

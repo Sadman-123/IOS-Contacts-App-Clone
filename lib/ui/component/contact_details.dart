@@ -12,7 +12,7 @@ class ContactDetails extends StatelessWidget{
     var mdh = MediaQuery.of(context).size.height;
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        trailing: Text("Edit",style: TextStyle(fontSize: mdw*0.06,color: CupertinoColors.activeBlue),),
+        trailing: Text("Edit",style: TextStyle(fontSize: mdw*0.06,color: CupertinoColors.activeBlue,fontFamily: "myapple"),),
       ),
       child: SafeArea(
           child: SingleChildScrollView(
@@ -27,7 +27,7 @@ class ContactDetails extends StatelessWidget{
                     children: [
                       Hero(tag: "${arr[ind]['email']}", child:  CircleAvatar(backgroundImage: NetworkImage("${arr[ind]['picture']['medium']}"),radius: 48,),),
                       SizedBox(height: mdh*0.02,),
-                      Text("${arr[ind]['name']['first']} ${arr[ind]['name']['last']}",style: TextStyle(fontSize: mdh*0.038),)
+                      Text("${arr[ind]['name']['first']} ${arr[ind]['name']['last']}",style: TextStyle(fontSize: mdh*0.038,fontFamily: "myapple",color: CupertinoColors.black),)
                     ],
                   ),
                 ),
@@ -83,7 +83,7 @@ class _contact_menu extends StatelessWidget {
         children: [
           Icon(ico.icon, size: mdw * 0.064), // Fix here to use `ico.icon` instead of `this.ico`
           SizedBox(height: mdh * 0.002),
-          Text(msg) // Removed unnecessary "$" for interpolation
+          Text(msg,style: TextStyle(fontFamily: "myapple",color: CupertinoColors.black),) // Removed unnecessary "$" for interpolation
         ],
       ),
     );
@@ -111,7 +111,7 @@ class Contact_Mobile extends StatelessWidget
         children: [
           Text("mobile"),
           SizedBox(height: mdh*0.0067,),
-          Text("$num",style: TextStyle(fontSize: mdw*0.06,color: CupertinoColors.activeBlue),)
+          Text("$num",style: TextStyle(fontSize: mdw*0.06,color: CupertinoColors.activeBlue,fontFamily: "myapple"),)
         ],
       ),
     );
@@ -139,7 +139,7 @@ class Contact_Notes extends StatelessWidget
         children: [
           Text("Notes"),
           SizedBox(height: mdh*0.0067,),
-          Obx(()=>home.notes.isEmpty?Text(""):Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.black),overflow: TextOverflow.ellipsis,maxLines: 2,))
+          Obx(()=>home.notes.isEmpty?Text(""):Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.black,fontFamily: "myapple"),overflow: TextOverflow.ellipsis,maxLines: 2,))
         ],
       ),
     );
@@ -164,17 +164,17 @@ class Contact_Options extends StatelessWidget
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Send Message",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+            child: Text("Send Message",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue,fontFamily: "myapple"),),
           ) ,
           Divider(height: mdh*0.001,),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Share Contact",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+            child: Text("Share Contact",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue,fontFamily: "myapple"),),
           ),
           Divider(height: mdh*0.001,),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Add to Favourites",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
+            child: Text("Add to Favourites",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue,fontFamily: "myapple"),),
           )
         ],
       ),

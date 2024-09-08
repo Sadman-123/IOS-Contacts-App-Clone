@@ -30,12 +30,12 @@ class Myaccount extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    child: Text("Sadman",style: TextStyle(fontSize: mdw*0.069,fontWeight: FontWeight.bold),),
+                    child: Text("Sadman",style: TextStyle(fontSize: mdw*0.069,fontWeight: FontWeight.bold,fontFamily: "myapple",color: CupertinoColors.black),),
                   ),
                   Container(
                     child: Row(
                       children: [
-                        Text("1109 contacts",style: TextStyle(fontSize: mdw*0.035),),
+                        Text("1109 contacts",style: TextStyle(fontSize: mdw*0.035,fontFamily: "myapple",color: CupertinoColors.black),),
                         SizedBox(width: mdw*0.020,),
                         Text("20 active",style: TextStyle(fontSize: mdw*0.035,color: CupertinoColors.activeGreen),)
                       ],
