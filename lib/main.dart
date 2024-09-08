@@ -12,7 +12,7 @@ class Main extends StatelessWidget
   Widget build(BuildContext context) {
     return GetCupertinoApp(
       debugShowCheckedModeBanner: false,
-      home: ContactDetails(),
+      home: Home(),
     );
   }
 }

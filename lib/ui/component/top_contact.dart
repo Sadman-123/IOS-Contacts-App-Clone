@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lox/controller/home_controller.dart';
+import 'package:lox/ui/component/contact_details.dart';
 HomeController home=Get.put(HomeController());
 class TopContact extends StatelessWidget {
   @override
@@ -30,39 +31,42 @@ class _TopCards extends StatelessWidget {
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
     var mdh = MediaQuery.of(context).size.height;
-    return Container(
-      margin: EdgeInsets.all(10),
-      height: mdh * 0.224,
-      width: mdw * 0.415,
-      decoration: BoxDecoration(
-        color: CupertinoColors.secondarySystemBackground,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(9.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Obx(()=>CircleAvatar(
-              backgroundImage: NetworkImage("${arr[num]['picture']['medium']}"),
-              radius: 34,
-            ),),
-            Obx(()=>Text(
-              "${arr[num]['name']['first']}",
-              style: TextStyle(fontSize: mdw * 0.07),
-            ),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildIcon(CupertinoIcons.phone_fill, CupertinoColors.activeGreen, mdh, mdw),
-                _buildIcon(CupertinoIcons.video_camera_solid, CupertinoColors.black, mdh, mdw),
-                _buildIcon(CupertinoIcons.mail_solid, CupertinoColors.black, mdh, mdw),
-              ],
-            ),
-          ],
+    return GestureDetector(
+      child: Container(
+        margin: EdgeInsets.all(10),
+        height: mdh * 0.224,
+        width: mdw * 0.415,
+        decoration: BoxDecoration(
+          color: CupertinoColors.secondarySystemBackground,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(9.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Obx(()=>Hero(tag: Key("${arr[num]['email']}"), child: CircleAvatar(
+                backgroundImage: NetworkImage("${arr[num]['picture']['medium']}"),
+                radius: 34,
+              ),)),
+              Obx(()=>Text(
+                "${arr[num]['name']['first']}",
+                style: TextStyle(fontSize: mdw * 0.07),
+              ),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildIcon(CupertinoIcons.phone_fill, CupertinoColors.activeGreen, mdh, mdw),
+                  _buildIcon(CupertinoIcons.video_camera_solid, CupertinoColors.black, mdh, mdw),
+                  _buildIcon(CupertinoIcons.mail_solid, CupertinoColors.black, mdh, mdw),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
+      onTap: (){Get.to(ContactDetails(arr: arr,ind: num,));},
     );
   }
 
