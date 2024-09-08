@@ -1,26 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:lox/controller/home_controller.dart';
+HomeController home=Get.put(HomeController());
 class TopContact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
     var mdh = MediaQuery.of(context).size.height;
-    return Container(
+    return Obx(()=>Container(
       margin: EdgeInsets.all(10),
       height: mdh * 0.24,  // Give explicit height to the container
-      child: ListView.builder(
+      child: home.arr.isEmpty?CupertinoActivityIndicator(radius: mdw*0.05,):ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: home.arr.length,
         itemBuilder: (context, index) {
-          return _TopCards();  // Corrected the class name to PascalCase
+          return _TopCards(arr: home.arr,num: index,);  // Corrected the class name to PascalCase
         },
       ),
-    );
+    ));
   }
 }
 
 class _TopCards extends StatelessWidget {
+  dynamic arr=[];
+  int num=0;
+  _TopCards({required this.arr,required this.num});
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.of(context).size.width;
@@ -39,14 +44,14 @@ class _TopCards extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage("https://i.pravatar.cc/300"),
+            Obx(()=>CircleAvatar(
+              backgroundImage: NetworkImage("${arr[num]['picture']['medium']}"),
               radius: 34,
-            ),
-            Text(
-              "sadman",
+            ),),
+            Obx(()=>Text(
+              "${arr[num]['name']['first']}",
               style: TextStyle(fontSize: mdw * 0.07),
-            ),
+            ),),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

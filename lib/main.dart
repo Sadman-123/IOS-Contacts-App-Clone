@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:lox/ui/component/contact_details.dart';
 import 'package:lox/ui/home.dart';
 void main()
 {
@@ -8,9 +10,9 @@ class Main extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return GetCupertinoApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: ContactDetails(),
     );
   }
 }
