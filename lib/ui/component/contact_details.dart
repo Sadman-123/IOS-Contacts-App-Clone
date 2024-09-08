@@ -25,7 +25,7 @@ class ContactDetails extends StatelessWidget{
                   width: double.infinity,
                   child: Column(
                     children: [
-                      Hero(tag: "${arr[ind]['email']}", child:  CircleAvatar(backgroundImage: NetworkImage("${arr[ind]['picture']['medium']}"),radius: 48,),),
+                      CircleAvatar(backgroundImage: NetworkImage("${arr[ind]['picture']['medium']}"),radius: 48,),
                       SizedBox(height: mdh*0.02,),
                       Text("${arr[ind]['name']['first']} ${arr[ind]['name']['last']}",style: TextStyle(fontSize: mdh*0.038,fontFamily: "myapple",color: CupertinoColors.black),)
                     ],
@@ -109,7 +109,7 @@ class Contact_Mobile extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("mobile"),
+          Text("mobile",style: TextStyle(fontFamily: "myapple",color: CupertinoColors.black),),
           SizedBox(height: mdh*0.0067,),
           Text("$num",style: TextStyle(fontSize: mdw*0.06,color: CupertinoColors.activeBlue,fontFamily: "myapple"),)
         ],
@@ -137,7 +137,7 @@ class Contact_Notes extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Notes"),
+          Text("Notes",style: TextStyle(fontFamily: "myapple",color: CupertinoColors.black),),
           SizedBox(height: mdh*0.0067,),
           Obx(()=>home.notes.isEmpty?Text(""):Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.black,fontFamily: "myapple"),overflow: TextOverflow.ellipsis,maxLines: 2,))
         ],
@@ -160,7 +160,8 @@ class Contact_Options extends StatelessWidget
           color: CupertinoColors.secondarySystemBackground,
           borderRadius: BorderRadius.circular(20)
       ),
-      child: ListView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),

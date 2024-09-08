@@ -46,10 +46,10 @@ class _TopCards extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Obx(()=>Hero(tag: Key("${arr[num]['email']}"), child: CircleAvatar(
+              Obx(()=>CircleAvatar(
                 backgroundImage: NetworkImage("${arr[num]['picture']['medium']}"),
                 radius: 34,
-              ),)),
+              )),
               Obx(()=>Text(
                 "${arr[num]['name']['first']}",
                 style: TextStyle(fontSize: mdw * 0.07,fontFamily: "myapple",color: CupertinoColors.black),
