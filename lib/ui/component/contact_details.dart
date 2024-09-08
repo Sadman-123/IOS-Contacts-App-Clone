@@ -11,42 +11,50 @@ class ContactDetails extends StatelessWidget{
     var mdw = MediaQuery.of(context).size.width;
     var mdh = MediaQuery.of(context).size.height;
     return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+      ),
       child: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(mdw*0.005),
-                height: mdh*0.21,
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    Hero(tag: "${arr[ind]['email']}", child:  CircleAvatar(backgroundImage: NetworkImage("${arr[ind]['picture']['medium']}"),radius: 48,),),
-                    SizedBox(height: mdh*0.02,),
-                    Text("${arr[ind]['name']['first']} ${arr[ind]['name']['last']}",style: TextStyle(fontSize: mdh*0.038),)
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(mdw*0.005),
+                  height: mdh*0.21,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Hero(tag: "${arr[ind]['email']}", child:  CircleAvatar(backgroundImage: NetworkImage("${arr[ind]['picture']['medium']}"),radius: 48,),),
+                      SizedBox(height: mdh*0.02,),
+                      Text("${arr[ind]['name']['first']} ${arr[ind]['name']['last']}",style: TextStyle(fontSize: mdh*0.038),)
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-               margin: EdgeInsets.all(mdw*0.005),
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                 children: [
-                   _contact_menu(ico: Icon(CupertinoIcons.mail_solid),msg: "message",),
-                   _contact_menu(ico: Icon(CupertinoIcons.phone_fill),msg: "call",),
-                   _contact_menu(ico: Icon(CupertinoIcons.video_camera_solid),msg: "video",),
-                   _contact_menu(ico: Icon(CupertinoIcons.money_dollar),msg: "pay",)
-                 ],
+                Container(
+                 margin: EdgeInsets.all(mdw*0.005),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: [
+                     _contact_menu(ico: Icon(CupertinoIcons.mail_solid),msg: "message",),
+                     _contact_menu(ico: Icon(CupertinoIcons.phone_fill),msg: "call",),
+                     _contact_menu(ico: Icon(CupertinoIcons.video_camera_solid),msg: "video",),
+                     _contact_menu(ico: Icon(CupertinoIcons.money_dollar),msg: "pay",)
+                   ],
+                 ),
                ),
-             ),
-              Container(
-                  child: Contact_Mobile(num: "${arr[ind]['phone']}",)
-              ),
-              Container(
-                  child: Contact_Notes()),
-              Container(
-                  child: Contact_Options())
-            ],
+                Container(
+                    child: Contact_Mobile(num: "${arr[ind]['phone']}",)
+                ),
+                Container(
+                    child: Contact_Notes()),
+                Container(
+                    child: Contact_Options()),
+                Container(
+                    child: Contact_Additional(title: "Add to Emergency Contacts",)),
+                Container(
+                    child: Contact_Additional(title: "Share My Location",)),
+              ],
+            ),
           )
       ),
     );
@@ -128,9 +136,9 @@ class Contact_Notes extends StatelessWidget
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("notes"),
+          Text("Notes"),
           SizedBox(height: mdh*0.0067,),
-          Obx(()=>Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),overflow: TextOverflow.ellipsis,maxLines: 2,))
+          Obx(()=>Text("${home.notes}",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.black),overflow: TextOverflow.ellipsis,maxLines: 2,))
         ],
       ),
     );
@@ -169,6 +177,27 @@ class Contact_Options extends StatelessWidget
           )
         ],
       ),
+    );
+  }
+}
+class Contact_Additional extends StatelessWidget
+{
+  String title="";
+  Contact_Additional({required this.title});
+  @override
+  Widget build(BuildContext context) {
+    var mdw = MediaQuery.of(context).size.width;
+    var mdh = MediaQuery.of(context).size.height;
+    return Container(
+      margin: EdgeInsets.all(mdw*0.029),
+      height: mdh*0.065,
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+          color: CupertinoColors.secondarySystemBackground,
+          borderRadius: BorderRadius.circular(20)
+      ),
+      width: double.infinity,
+      child:  Text("$title",style: TextStyle(fontSize: mdw*0.053,color: CupertinoColors.activeBlue),),
     );
   }
 }
