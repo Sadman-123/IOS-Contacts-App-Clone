@@ -11,7 +11,7 @@ class TopContact extends StatelessWidget {
     var mdh = MediaQuery.of(context).size.height;
     return Obx(()=>Container(
       margin: EdgeInsets.all(10),
-      height: mdh * 0.24,  // Give explicit height to the container
+      height: mdh * 0.293,  // Give explicit height to the container
       child: home.arr.isEmpty?CupertinoActivityIndicator(radius: mdw*0.05,):ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: home.arr.length,
@@ -34,7 +34,7 @@ class _TopCards extends StatelessWidget {
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.all(10),
-        height: mdh * 0.224,
+        height: mdh * 0.294,
         width: mdw * 0.415,
         decoration: BoxDecoration(
           color: CupertinoColors.secondarySystemBackground,
@@ -54,19 +54,24 @@ class _TopCards extends StatelessWidget {
                 "${arr[num]['name']['first']}",
                 style: TextStyle(fontSize: mdw * 0.07),
               ),),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildIcon(CupertinoIcons.phone_fill, CupertinoColors.activeGreen, mdh, mdw),
-                  _buildIcon(CupertinoIcons.video_camera_solid, CupertinoColors.black, mdh, mdw),
-                  _buildIcon(CupertinoIcons.mail_solid, CupertinoColors.black, mdh, mdw),
-                ],
+              Container(
+                height: mdh*0.06,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildIcon(CupertinoIcons.phone_fill, CupertinoColors.activeGreen, mdh, mdw),
+                    _buildIcon(CupertinoIcons.video_camera_solid, CupertinoColors.black, mdh, mdw),
+                    _buildIcon(CupertinoIcons.mail_solid, CupertinoColors.black, mdh, mdw),
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
-      onTap: (){Get.to(ContactDetails(arr: arr,ind: num,));},
+      onTap: (){
+        Get.to(ContactDetails(arr: arr,ind: num,));
+        },
     );
   }
 
@@ -77,7 +82,7 @@ class _TopCards extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(width: 0.2),
       ),
-      height: mdh * 0.043,
+      height: mdh * 0.053,
       width: mdw * 0.09,
       child: Icon(iconData, color: iconColor),
     );

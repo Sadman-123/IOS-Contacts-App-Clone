@@ -20,9 +20,9 @@ class HomeController extends GetxController{
     arr.assignAll(lst);
   }
   void GetNotes() async {
-    var uri = Uri.parse("https://api.quotable.io/quotes/random");
+    var uri = Uri.parse("https://zenquotes.io/api/random");
     var data = await http.get(uri);
     var res = jsonDecode(data.body);
-    notes.value=res[0]['content'];
+    notes.value=res[0]['q'];
   }
 }
