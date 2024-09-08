@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:lox/ui/component/myaccount.dart';
+import 'package:lox/ui/component/saved_contacts.dart';
 import 'package:lox/ui/component/searchbar.dart';
 import 'package:lox/ui/component/top_contact.dart';
 class Home extends StatelessWidget{
@@ -14,7 +15,8 @@ class Home extends StatelessWidget{
          children: [
            Searchbar(),
            Myaccount(),
-           TopContact()
+           TopContact(),
+           SavedContacts()
          ],
        ),
      ),
