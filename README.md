@@ -31,8 +31,6 @@ The UI is designed to be responsive, tested on multiple screen sizes including i
 ## How to Run
 
 1. Clone the repository.
-2. Run the app on a simulator or physical device using Xcode or a similar IDE.
+2. Run the app on a simulator or physical device using android studio or a vscode.
 
-## Download Link
 
-[Download the project](#)
