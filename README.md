@@ -12,19 +12,17 @@ This project is a UI clone of the iPhone Contacts app, with responsive design to
 
 ### iPhone 13 Screenshots
 
-![iPhone 13 Home Screen](SS/s1.png)
-*Home Screen - iPhone 13*
-
-![iPhone 13 Contact Details](SS/s2.png)
-*Contact Details - iPhone 13*
+<p float="left">
+  <img src="SS/s1.png" alt="iPhone 13 Home Screen" width="45%" />
+  <img src="SS/s2.png" alt="iPhone 13 Contact Details" width="45%" />
+</p>
 
 ### iPhone SE Screenshots
 
-![iPhone SE Home Screen](SS/s3.png)
-*Home Screen - iPhone SE*
-
-![iPhone SE Contact Details](SS/s4.png)
-*Contact Details - iPhone SE*
+<p float="left">
+  <img src="SS/s3.png" alt="iPhone SE Home Screen" width="45%" />
+  <img src="SS/s4.png" alt="iPhone SE Contact Details" width="45%" />
+</p>
 
 ## Responsive UI
 
@@ -38,4 +36,3 @@ The UI is designed to be responsive, tested on multiple screen sizes including i
 ## Download Link
 
 [Download the project](#)
-
