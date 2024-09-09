@@ -30,7 +30,7 @@ class Myaccount extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    child: Text("Sadman",style: TextStyle(fontSize: mdw*0.069,fontWeight: FontWeight.bold,fontFamily: "myapple",color: CupertinoColors.black),),
+                    child: Text("John",style: TextStyle(fontSize: mdw*0.069,fontWeight: FontWeight.bold,fontFamily: "myapple",color: CupertinoColors.black),),
                   ),
                   Container(
                     child: Row(
