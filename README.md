@@ -1,6 +1,6 @@
 # iPhone Contacts App Clone
 
-This project is a UI clone of the iPhone Contacts app, with responsive design to ensure compatibility across different screen sizes. It has been tested on multiple iPhone models including iPhone 13 and iPhone SE, and works seamlessly on both.
+This project is a UI clone of the iPhone Contacts app, with responsive design to ensure compatibility across different screen sizes. It has been tested on multiple iPhone models including iPhone 13 and iPhone SE, and works seamlessly on both...
 
 ## Features
 
